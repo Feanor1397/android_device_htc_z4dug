@@ -24,8 +24,8 @@ PRODUCT_NAME := full_z4dug
 PRODUCT_DEVICE := z4dug
 
 TARGET_KERNEL_SOURCE := kernel/htc/z4u
-TARGET_KERNEL_CONFIG := z4u_defconfig
-TARGET_KERNEL_RECOVERY_CONFIG := z4u_defconfig
+TARGET_KERNEL_CONFIG := z4dug_defconfig
+TARGET_KERNEL_RECOVERY_CONFIG := z4dug_defconfig
 
 #TARGET_KERNEL_SOURCE := kernel/htc/z4dug
 #TARGET_KERNEL_CONFIG := z4dug_defconfig
@@ -69,18 +69,18 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     liboverlay
 
- # GPS
-PRODUCT_PACKAGES += \
-    gps.msm7x27a
+# GPS
+#PRODUCT_PACKAGES += \
+#    gps.msm7x27a
 
 # Audio
-PRODUCT_PACKAGES += \
-    audio.primary.msm7x27a \
-    audio.a2dp.default \
-    audio.r_submix.default \
-    audio.usb.default \
-    libaudioutils \
-    libaudio-resampler
+#PRODUCT_PACKAGES += \
+#    audio.primary.msm7x27a \
+#    audio.a2dp.default \
+#    audio.r_submix.default \
+#    audio.usb.default \
+#    libaudioutils \
+#    libaudio-resampler
 
 # Lights
 PRODUCT_PACKAGES += \
