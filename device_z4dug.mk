@@ -27,15 +27,8 @@ TARGET_KERNEL_SOURCE := kernel/htc/z4u
 TARGET_KERNEL_CONFIG := z4dug_defconfig
 TARGET_KERNEL_RECOVERY_CONFIG := z4dug_defconfig
 
-#TARGET_KERNEL_SOURCE := kernel/htc/z4dug
-#TARGET_KERNEL_CONFIG := z4dug_defconfig
-#TARGET_KERNEL_RECOVERY_CONFIG := z4dug_defconfig
 
 $(call inherit-product, build/target/product/full.mk)
-
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_z4dug
-PRODUCT_DEVICE := z4dug
 
 PRODUCT_BOOT_JARS += qcmediaplayer
 
@@ -60,7 +53,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 # Graphics 
 PRODUCT_PACKAGES += \
     copybit.msm7x27a \
-    gralloc.msm7x27a \
+#    gralloc.msm7x27a \
     hwcomposer.msm7x27a \
     hwcomposer.default \
     memtrack.msm7x27a \
