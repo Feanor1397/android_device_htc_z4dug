@@ -36,11 +36,11 @@ PRODUCT_BOOT_JARS += qcmediaplayer
 PRODUCT_COPY_FILES += \
     device/htc/z4dug/ramdisk/init:root/init \
     #device/htc/z4dug/ramdisk/adbd:root/sbin/adbd \
-    device/htc/z4dug/ramdisk/init.rc:root/init.rc \
-    device/htc/z4dug/ramdisk/init.target.rc:root/init.target.rc \
-    device/htc/z4dug/ramdisk/init.usb.rc:root/init.usb.rc \
-    device/htc/z4dug/ramdisk/ueventd.rc:root/ueventd.rc \
-    device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.z4dug.rc
+    #device/htc/z4dug/ramdisk/init.rc:root/init.rc \
+    #device/htc/z4dug/ramdisk/init.target.rc:root/init.target.rc \
+    #device/htc/z4dug/ramdisk/init.usb.rc:root/init.usb.rc \
+    #device/htc/z4dug/ramdisk/ueventd.rc:root/ueventd.rc \
+    #device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.z4dug.rc
 
 
 # Set usb type
@@ -53,7 +53,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 # Graphics 
 PRODUCT_PACKAGES += \
     copybit.msm7x27a \
-#    gralloc.msm7x27a \
+    gralloc.msm7x27a \
     hwcomposer.msm7x27a \
     hwcomposer.default \
     memtrack.msm7x27a \
@@ -61,6 +61,17 @@ PRODUCT_PACKAGES += \
     libtilerenderer \
     libqdMetaData \
     liboverlay
+
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    ueventd.qcom.rc \
+    init.target.rc \
+    init.qcom.ril.sh \
+    rmt_storage_recovery \
+    init.recovery.qcom.rc
 
 # GPS
 #PRODUCT_PACKAGES += \

@@ -207,3 +207,6 @@ httplive.enable.discontinuity = true
 # Property for MPEG2TS playback
 TSParser.disable.seek = 1
 
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=mass_storage,adb
