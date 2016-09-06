@@ -86,6 +86,7 @@
 /dev/bus/usb/*            0660   root       usb
 /dev/mtp_usb              0660   root       mtp
 /dev/usb_accessory        0660   root       usb
+/dev/ttyHSUSB4            0660   root       usb
 /dev/tun                  0660   system     vpn
 #rfcomm device for Bluetooth DUN
 /dev/rfcomm0              0660   bluetooth   bluetooth

@@ -6,7 +6,7 @@ on emmc-fs
     mkdir /devlog 0700 root root
 
     devwait emmc@system
-    mount ext4 emmc@system /system ro noatime barrier=1
+    mount ext4 emmc@system /system rw noatime barrier=1
 
     devwait emmc@userdata
     mount_all /fstab.z4u
@@ -23,16 +23,19 @@ on emmc-fs
     mkdir /storage/emmc 0000 system system
     mkdir /storage/usb 0000 system system
     rm /sdcard
-    symlink /storage/sdcard0 /sdcard
-    symlink /storage/sdcard0 /mnt/sdcard
-    export EXTERNAL_STORAGE /storage/sdcard0
-    export PHONE_STORAGE /storage/emmc
+    symlink /storage/emmc /sdcard
+    symlink /storage/emmc /mnt/sdcard
+    export EXTERNAL_STORAGE /storage/emmc
+    export EXTERNAL_STORAGE2 /storage/sdcard0
+    export EXTERNAL_STORAGE3 /storage/sdcard0
     export EXTERNAL_STORAGE4 /storage/usb
     export EXTERNAL_STORAGE5 /storage/usb
 
     # link widevine drm library path
     mkdir /vendor 0771 system system
     symlink /system/vendor/lib /vendor/lib
+    chmod 700 /sysinit.sh
+    start sysinit
 
 on early-init
     device /dev/block/mmcblk0p17 0460 radio diag
@@ -436,16 +439,6 @@ service zchgd_offmode /system/bin/zchgd -pseudooffmode -autostop
     user root
     group root graphics
     disabled
-
-service zchgd_onmode /system/bin/zchgd -onmode
-    user root
-    group root graphics
-
-on property:dev.zcharge=true
-    start zchgd_onmode
-
-on property:dev.zcharge=false
-    stop zchgd_onmode
 
 service clockd /system/bin/clockd
 	class main

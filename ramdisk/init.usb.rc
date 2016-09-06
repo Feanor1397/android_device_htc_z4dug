@@ -260,9 +260,6 @@ on property:sys.usb.config=mtp
 #    write /sys/class/android_usb/android0/idProduct 0c93
 #    write /sys/class/android_usb/android0/functions ${sys.usb.config}
 #    write /sys/class/android_usb/android0/enable 1
-    #added by dummie
-    start adbd
-    #
     write /sys/devices/platform/android_usb/usb_function_switch 128
     setprop sys.usb.state ${sys.usb.config}
 
@@ -742,6 +739,32 @@ on property:sys.usb.config=rndis,modem
     write /sys/devices/platform/android_usb/usb_function_switch 260
     setprop sys.usb.state ${sys.usb.config}
 
+
+
+on property:sys.usb.config=mtp,adb,mass_storage,acm
+    start adbd
+    write /sys/devices/platform/android_usb/usb_function_switch 1155
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mtp,mass_storage,adb,acm
+    start adbd
+    write /sys/devices/platform/android_usb/usb_function_switch 1155
+    setprop sys.usb.state ${sys.usb.config}
+
+##without adb
+on property:sys.usb.config=mtp,mass_storage,acm
+    write /sys/devices/platform/android_usb/usb_function_switch 1153
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=rndis,mtp,adb,acm
+    start adbd
+    write /sys/devices/platform/android_usb/usb_function_switch 1159
+    setprop sys.usb.state ${sys.usb.config}
+
+##without adb
+on property:sys.usb.config=rndis,mtp,acm
+    write /sys/devices/platform/android_usb/usb_function_switch 1157
+    setprop sys.usb.state ${sys.usb.config}
 
 #used for ##3424
 on property:persist.sys.usb.diag.config=*

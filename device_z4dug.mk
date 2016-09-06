@@ -32,46 +32,42 @@ $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BOOT_JARS += qcmediaplayer
 
-# Ramdisk
+# Ramdisk \* at this moment i'm using my ramdisk and kernel *\
 PRODUCT_COPY_FILES += \
     device/htc/z4dug/ramdisk/init:root/init \
-    #device/htc/z4dug/ramdisk/adbd:root/sbin/adbd \
-    #device/htc/z4dug/ramdisk/init.rc:root/init.rc \
-    #device/htc/z4dug/ramdisk/init.target.rc:root/init.target.rc \
-    #device/htc/z4dug/ramdisk/init.usb.rc:root/init.usb.rc \
-    #device/htc/z4dug/ramdisk/ueventd.rc:root/ueventd.rc \
-    #device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.z4dug.rc
+    device/htc/z4dug/ramdisk/init.rc:root/init.rc \
+    device/htc/z4dug/ramdisk/init.usb.rc:root/init.usb.rc \
+    device/htc/z4dug/ramdisk/init.target.rc:root/init.target.rc \
+    device/htc/z4dug/ramdisk/init.trace.rc:root/init.trace.rc \
+    device/htc/z4dug/ramdisk/init.cm.rc:root/init.cm.rc \
+    device/htc/z4dug/ramdisk/init.qcom.rc:root/init.qcom.rc \
+    device/htc/z4dug/ramdisk/init.qcom.sh:root/init.qcom.sh \
+    device/htc/z4dug/ramdisk/ueventd.rc:root/ueventd.rc \
+    device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.target.rc \
+    device/htc/z4dug/ramdisk/default.prop:root/default.prop
 
+# KERNEL
+PRODUCT_COPY_FILES += \
+    device/htc/z4dug/kernel:kernel
 
 # Set usb type
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    persist.sys.usb.config=mass_storage,adb \
-    persist.service.adb.enable=1 \
-    ro.adb.secure=0 \
-    ro.secure=0
+#ADDITIONAL_DEFAULT_PROPERTIES += \
+#    persist.sys.usb.config=mass_storage,adb \
+#    persist.service.adb.enable=1 \
+#    ro.adb.secure=0 \
+#    ro.secure=0
 
 # Graphics 
 PRODUCT_PACKAGES += \
     copybit.msm7x27a \
     gralloc.msm7x27a \
     hwcomposer.msm7x27a \
-    hwcomposer.default \
     memtrack.msm7x27a \
     libgenlock \
     libtilerenderer \
     libqdMetaData \
     liboverlay
-
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.rc \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
-    ueventd.qcom.rc \
-    init.target.rc \
-    init.qcom.ril.sh \
-    rmt_storage_recovery \
-    init.recovery.qcom.rc
+#    hwcomposer.default
 
 # GPS
 #PRODUCT_PACKAGES += \
