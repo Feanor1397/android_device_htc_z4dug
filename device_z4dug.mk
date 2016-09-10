@@ -58,13 +58,14 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     copybit.msm7x27a \
     gralloc.msm7x27a \
+    gralloc.default \
     hwcomposer.msm7x27a \
-    memtrack.msm7x27a \
+#    memtrack.msm7x27a \
     libgenlock \
     libtilerenderer \
-    libqdMetaData \
+#    libqdMetaData \
     liboverlay
-#    hwcomposer.default
+
 
 # GPS
 #PRODUCT_PACKAGES += \
