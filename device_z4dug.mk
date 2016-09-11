@@ -23,7 +23,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_z4dug
 PRODUCT_DEVICE := z4dug
 
-TARGET_KERNEL_SOURCE := kernel/htc/z4u
+TARGET_KERNEL_SOURCE := kernel/qcom/msm7x27a
 TARGET_KERNEL_CONFIG := z4dug_defconfig
 TARGET_KERNEL_RECOVERY_CONFIG := z4dug_defconfig
 
@@ -43,10 +43,6 @@ PRODUCT_COPY_FILES += \
     device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.target.rc \
     device/htc/z4dug/ramdisk/default.prop:root/default.prop
 
-# KERNEL
-PRODUCT_COPY_FILES += \
-    device/htc/z4dug/kernel:kernel
-
 # Set usb type
 ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.usb.config=mass_storage \
@@ -60,23 +56,20 @@ PRODUCT_PACKAGES += \
     gralloc.msm7x27a \
     gralloc.default \
     hwcomposer.msm7x27a \
-#    memtrack.msm7x27a \
     libgenlock \
     libtilerenderer \
-#    libqdMetaData \
     liboverlay
 
 
 # GPS
-#PRODUCT_PACKAGES += \
-#    gps.msm7x27a
+PRODUCT_PACKAGES += \
+    gps.msm7x27a
 
 # Audio
 #PRODUCT_PACKAGES += \
 #    audio.primary.msm7x27a \
+#    audio.primary.default \
 #    audio.a2dp.default \
-#    audio.r_submix.default \
-#    audio.usb.default \
 #    libaudioutils \
 #    libaudio-resampler
 
