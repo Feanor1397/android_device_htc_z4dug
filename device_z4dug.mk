@@ -36,8 +36,6 @@ PRODUCT_BOOT_JARS += qcmediaplayer
 PRODUCT_COPY_FILES += \
     device/htc/z4dug/ramdisk/init.usb.rc:root/init.usb.rc \
     device/htc/z4dug/ramdisk/init.target.rc:root/init.target.rc \
-    device/htc/z4dug/ramdisk/init.trace.rc:root/init.trace.rc \
-    device/htc/z4dug/ramdisk/init.cm.rc:root/init.cm.rc \
     device/htc/z4dug/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/htc/z4dug/ramdisk/init.qcom.sh:root/init.qcom.sh \
     device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.target.rc \
@@ -66,12 +64,13 @@ PRODUCT_PACKAGES += \
     gps.msm7x27a
 
 # Audio
-#PRODUCT_PACKAGES += \
-#    audio.primary.msm7x27a \
-#    audio.primary.default \
-#    audio.a2dp.default \
-#    libaudioutils \
-#    libaudio-resampler
+PRODUCT_PACKAGES += \
+    audio.primary.msm7x27a \
+    audio.primary.default \
+    audio.a2dp.default \
+    audio_policy.default.so \
+    libaudioutils \
+    libaudio-resampler
 
 # Lights
 PRODUCT_PACKAGES += \
