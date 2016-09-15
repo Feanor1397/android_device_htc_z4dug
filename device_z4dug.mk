@@ -38,7 +38,7 @@ PRODUCT_COPY_FILES += \
     device/htc/z4dug/ramdisk/init.target.recovery.rc:root/init.target.recovery.rc \
     device/htc/z4dug/ramdisk/init.trace.rc:root/init.trace.rc \
     device/htc/z4dug/ramdisk/init.usb.rc:root/init.usb.rc \
-    device/htc/z4dug/ramdisk/sysinit.sh:root/init.sh \
+    device/htc/z4dug/ramdisk/sysinit.sh:root/sysinit.sh \
     device/htc/z4dug/ramdisk/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
     device/htc/z4dug/ramdisk/ueventd.rc:root/ueventd.rc \
     device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.target.rc
