@@ -85,6 +85,8 @@ loglevel 1
     write /proc/sys/kernel/sched_rt_runtime_us 950000
     write /proc/sys/kernel/sched_rt_period_us 1000000
 
+
+
 # NETWORK: NAT setting
 # To prevent out of WINDOW ACK from making
 # connection tracking to treat them as INVALID packet
@@ -298,6 +300,8 @@ on post-fs-data
     import /init.cm.rc
 
 on boot
+# framebuffer pls... :(
+    write /sys/module/msm_fb/parameters/align_buffer 1
 # basic network init
     ifup lo
     hostname localhost
