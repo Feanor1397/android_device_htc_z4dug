@@ -23,9 +23,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_z4dug
 PRODUCT_DEVICE := z4dug
 
-TARGET_KERNEL_SOURCE := kernel/qcom/msm7x27a
-TARGET_KERNEL_CONFIG := z4dug_defconfig
-TARGET_KERNEL_RECOVERY_CONFIG := z4dug_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/z4u
+TARGET_KERNEL_CONFIG := dummie_z4u_defconfig
+TARGET_KERNEL_RECOVERY_CONFIG := recovery_z4u_defconfig
 
 
 $(call inherit-product, build/target/product/full.mk)
