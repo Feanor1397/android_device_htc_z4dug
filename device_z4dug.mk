@@ -43,12 +43,16 @@ PRODUCT_COPY_FILES += \
     device/htc/z4dug/ramdisk/ueventd.rc:root/ueventd.rc \
     device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.target.rc
 
+# ADB
+PRODUCT_COPY_FILES += \
+    device/htc/z4dug/ramdisk/sbin/adbd:root/sbin/adbd
+
 # Set usb type
 ADDITIONAL_DEFAULT_PROPERTIES += \
-    persist.sys.usb.config=mass_storage \
-    persist.service.adb.enable=1 \
-    ro.adb.secure=0 \
-    ro.secure=0
+    ro.secure=0 \
+    ro.allow.mock.location=0 \
+    ro.debuggable=1 
+#    persist.sys.usb.config=mtp,adb
 
 # Graphics 
 PRODUCT_PACKAGES += \
