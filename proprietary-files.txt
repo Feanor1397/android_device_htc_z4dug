@@ -8,3 +8,6 @@ lib/libgsl.so
 lib/libsc-a2xx.so
 etc/firmware/yamato_pm4.fw
 etc/firmware/yamato_pfp.fw
+etc/vold.fstab
+usr/keylayout/sr_touchscreen.kl
+usr/keylayout/synaptics-rmi_touchscreen.kl
