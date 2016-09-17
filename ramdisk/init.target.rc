@@ -9,7 +9,7 @@ on emmc-fs
     mount ext4 emmc@system /system rw noatime barrier=1
 
     devwait emmc@userdata
-    mount_all /fstab.z4dug
+    mount_all /fstab.z4u
 
     devwait emmc@cache
     mount ext4 emmc@cache /cache nosuid nodev noatime barrier=1

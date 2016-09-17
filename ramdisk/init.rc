@@ -4,12 +4,9 @@
 # This is a common source of Android security bugs.
 #
 
-import /init.qcom.rc
+import /init.${ro.hardware}.rc
 import /init.usb.rc
 import /init.trace.rc
-import /init.cm.rc
-import /init.target.rc
-import /init.target.usb.rc
 
 on early-init
     # Set init and its forked children's oom_adj.
@@ -299,7 +296,12 @@ on post-fs-data
     chmod 0771 /data/preload
     chown system system /data/preload
 
+    # Include extra init file
+    import /init.cm.rc
+
 on boot
+# framebuffer pls... :(
+    write /sys/module/msm_fb/parameters/align_buffer 1
 # basic network init
     ifup lo
     hostname localhost
