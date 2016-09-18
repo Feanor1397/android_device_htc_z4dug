@@ -1,0 +1,17 @@
+on property:sys.usb.config=mtp,adb
+    start adbd
+    write /sys/devices/platform/android_usb/usb_function_switch 130
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mass_storage,adb
+    start adbd
+    write /sys/devices/platform/android_usb/usb_function_switch 3
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mass_storage
+    write /sys/devices/platform/android_usb/usb_function_switch 1
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mtp
+    write /sys/devices/platform/android_usb/usb_function_switch 128
+    setprop sys.usb.state ${sys.usb.config}

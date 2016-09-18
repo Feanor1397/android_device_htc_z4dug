@@ -21,8 +21,7 @@ on init
 
 sysclktz 0
 
-loglevel 1
-#loglevel 3
+loglevel 3
 
 # setup the global environment
     export PATH /sbin:/system/sbin:/system/bin:/system/xbin
@@ -31,6 +30,7 @@ loglevel 1
     export ANDROID_ROOT /system
     export ANDROID_ASSETS /system/app
     export ANDROID_DATA /data
+    export ANDROID_STORAGE /storage
     export ASEC_MOUNTPOINT /mnt/asec
     export LOOP_MOUNTPOINT /mnt/obb
     export BOOTCLASSPATH /system/framework/core.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/framework2.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar
@@ -38,7 +38,6 @@ loglevel 1
 # Backward compatibility
     symlink /system/etc /etc
     symlink /sys/kernel/debug /d
-    symlink /mnt/sdcard /sdcard
 
 #Mount debugfs first, it's too slow to check not S-ON then mount. Systrace will work incorrect.
     mount debugfs /sys/kernel/debug /sys/kernel/debug
@@ -300,8 +299,6 @@ on post-fs-data
     import /init.cm.rc
 
 on boot
-# framebuffer pls... :(
-    write /sys/module/msm_fb/parameters/align_buffer 1
 # basic network init
     ifup lo
     hostname localhost
@@ -724,12 +721,6 @@ service priorityd /system/bin/sh /system/etc/priorityd.sh
     user root
     disabled
     oneshot
-
-#by Dummie999: add init.d support to the kernel. Executes /sysinit.sh, which executes all files under /system/etc/init.d
-service sysinit /system/bin/sh /sysinit.sh
-    oneshot    
-    user root
-#    oneshot
 
 # This will start LMI Rescue Start Server which H3G Orange TMI KDDI Verizon is exceptional
 service RescueStarter /system/bin/RescueStarter

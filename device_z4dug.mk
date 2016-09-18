@@ -36,8 +36,7 @@ PRODUCT_COPY_FILES += \
     device/htc/z4dug/ramdisk/init.rc:root/init.rc \
     device/htc/z4dug/ramdisk/init.target.rc:root/init.target.rc \
     device/htc/z4dug/ramdisk/init.target.recovery.rc:root/init.target.recovery.rc \
-    device/htc/z4dug/ramdisk/init.trace.rc:root/init.trace.rc \
-    device/htc/z4dug/ramdisk/init.usb.rc:root/init.usb.rc \
+    device/htc/z4dug/ramdisk/init.target.usb.rc:root/init.target.usb.rc \
     device/htc/z4dug/ramdisk/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
     device/htc/z4dug/ramdisk/ueventd.rc:root/ueventd.rc \
     device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.target.rc
@@ -50,8 +49,13 @@ PRODUCT_COPY_FILES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.allow.mock.location=0 \
-    ro.debuggable=1 
-#    persist.sys.usb.config=mtp,adb
+    ro.debuggable=1 \
+    dalvik.vm.heapstartsize=5m \
+    dalvik.vm.heapgrowthlimit=48m \
+    dalvik.vm.heapsize=128m \
+    dalvik.vm.heaptargetutilization=0.25 \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapmaxfree=2m
 
 # Graphics 
 PRODUCT_PACKAGES += \

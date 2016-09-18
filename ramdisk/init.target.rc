@@ -9,7 +9,7 @@ on emmc-fs
     mount ext4 emmc@system /system rw noatime barrier=1
 
     devwait emmc@userdata
-    mount_all /fstab.z4u
+    mount_all /fstab.z4dug
 
     devwait emmc@cache
     mount ext4 emmc@cache /cache nosuid nodev noatime barrier=1
@@ -23,19 +23,16 @@ on emmc-fs
     mkdir /storage/emmc 0000 system system
     mkdir /storage/usb 0000 system system
     rm /sdcard
-    symlink /storage/emmc /sdcard
-    symlink /storage/emmc /mnt/sdcard
-    export EXTERNAL_STORAGE /storage/emmc
-    export EXTERNAL_STORAGE2 /storage/sdcard0
-    export EXTERNAL_STORAGE3 /storage/sdcard0
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+    export EXTERNAL_STORAGE /storage/sdcard0
+    export PHONE_STORAGE /storage/emmc
     export EXTERNAL_STORAGE4 /storage/usb
     export EXTERNAL_STORAGE5 /storage/usb
 
     # link widevine drm library path
     mkdir /vendor 0771 system system
     symlink /system/vendor/lib /vendor/lib
-    chmod 700 /sysinit.sh
-    start sysinit
 
 on early-init
     device /dev/block/mmcblk0p17 0460 radio diag
