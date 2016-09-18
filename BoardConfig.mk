@@ -135,6 +135,10 @@ BOARD_VOLD_MAX_PARTITIONS := 41
 ARCH_ARM_HIGH_OPTIMIZATION := true
 ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true
 
+# RIL 
+BOARD_RIL_CLASS := ../../../device/htc/z4dug/ril
+BOARD_RIL_NO_CELLINFOLIST := true
+
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
   ifeq ($(TARGET_BUILD_VARIANT),userdebug)
