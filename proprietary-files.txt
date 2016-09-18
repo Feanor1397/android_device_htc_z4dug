@@ -11,3 +11,8 @@ etc/firmware/yamato_pfp.fw
 etc/vold.fstab
 usr/keylayout/sr_touchscreen.kl
 usr/keylayout/synaptics-rmi-touchscreen.kl
+lib/libhtc_rilhook.so
+lib/libril-qc-1.so
+lib/libril-qcril-hook-oem.so
+lib/libril.so
+bin/rild_dsds
