@@ -57,6 +57,13 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=2m
 
+# Telephony
+PRODUCT_PROPERTY_OVERRIDES += \
+   mobiledata.interfaces=rmnet0 \
+   rild.libpath=/system/lib/libhtc_ril.so \
+   ro.telephony.ril_class=HtcMsm7x27aRIL \
+   ro.telephony.ril.config=datacallapn,signalstrength
+
 # Graphics 
 PRODUCT_PACKAGES += \
     copybit.msm7x27a \
@@ -80,6 +87,10 @@ PRODUCT_PACKAGES += \
     audio_policy.default.so \
     libaudioutils \
     libaudio-resampler
+
+# Audio
+PRODUCT_COPY_FILES += \
+    device/htc/z4dug/config/audio_policy.conf:system/etc/audio_policy.conf
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -114,7 +125,12 @@ PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant 
 
-
+# Media
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml
 
 # Other
 PRODUCT_PACKAGES += \
