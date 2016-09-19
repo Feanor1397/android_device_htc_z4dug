@@ -58,11 +58,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     dalvik.vm.heapmaxfree=2m
 
 # Telephony
-PRODUCT_PROPERTY_OVERRIDES += \
-   mobiledata.interfaces=rmnet0 \
-   rild.libpath=/system/lib/libhtc_ril.so \
-   ro.telephony.ril_class=HtcMsm7x27aRIL \
-   ro.telephony.ril.config=datacallapn,signalstrength
+#PRODUCT_PROPERTY_OVERRIDES += \
+#   mobiledata.interfaces=rmnet0 \
+#   rild.libpath=/system/lib/libhtc_ril.so \
+#   ro.telephony.ril_class=HtcMsm7x27aRIL \
+#   ro.telephony.ril.config=datacallapn,signalstrength
 
 # Graphics 
 PRODUCT_PACKAGES += \

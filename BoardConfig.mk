@@ -137,7 +137,6 @@ ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true
 
 # RIL 
 BOARD_RIL_CLASS := ../../../device/htc/z4dug/ril
-BOARD_RIL_NO_CELLINFOLIST := true
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
