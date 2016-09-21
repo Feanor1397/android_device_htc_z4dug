@@ -26,19 +26,12 @@ PRODUCT_BOOT_JARS += qcmediaplayer
 PRODUCT_COPY_FILES += \
     device/htc/z4dug/ramdisk/bt_permission.sh:root/bt_permission.sh \
     device/htc/z4dug/ramdisk/cwkeys:root/cwkeys \
-    device/htc/z4dug/ramdisk/default.prop:root/default.prop \
     device/htc/z4dug/ramdisk/fstab.z4dug:root/fstab.z4dug \
     device/htc/z4dug/ramdisk/init:root/init \
-    device/htc/z4dug/ramdisk/init.cm.rc:root/init.cm.rc \
-    device/htc/z4dug/ramdisk/init.goldfish.rc:root/init.goldfish.rc \
     device/htc/z4dug/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/htc/z4dug/ramdisk/init.qcom.sh:root/init.qcom.sh \
-    device/htc/z4dug/ramdisk/init.rc:root/init.rc \
     device/htc/z4dug/ramdisk/init.target.rc:root/init.target.rc \
-    device/htc/z4dug/ramdisk/init.target.recovery.rc:root/init.target.recovery.rc \
     device/htc/z4dug/ramdisk/init.target.usb.rc:root/init.target.usb.rc \
-    device/htc/z4dug/ramdisk/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
-    device/htc/z4dug/ramdisk/ueventd.rc:root/ueventd.rc \
     device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.target.rc
 
 # ADB
@@ -50,6 +43,8 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.allow.mock.location=0 \
     ro.debuggable=1 \
+    persist.service.adb.enable=1 \
+    ro.metropcs.ui=0 \
     dalvik.vm.heapstartsize=5m \
     dalvik.vm.heapgrowthlimit=48m \
     dalvik.vm.heapsize=128m \
