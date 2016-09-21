@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.target.usb.rc
+import init.qcom.usb.rc
 
 on boot-pause
     exec system/bin/battery_charging
