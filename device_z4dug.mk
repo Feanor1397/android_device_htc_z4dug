@@ -31,7 +31,7 @@ PRODUCT_COPY_FILES += \
     device/htc/z4dug/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/htc/z4dug/ramdisk/init.qcom.sh:root/init.qcom.sh \
     device/htc/z4dug/ramdisk/init.target.rc:root/init.target.rc \
-    device/htc/z4dug/ramdisk/init.target.usb.rc:root/init.target.usb.rc \
+    device/htc/z4dug/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
     device/htc/z4dug/ramdisk/ueventd.target.rc:root/ueventd.target.rc
 
 # ADB
